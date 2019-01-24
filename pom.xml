@@ -39,7 +39,7 @@
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>7.5.0.20543</version>
+                <version>3.3.0.1492</version>
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
