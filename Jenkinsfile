@@ -11,7 +11,7 @@ pipeline{
                 }
                  stage('Maven clean package') {
                          steps{
-                                sh '${mvnCMD} clean install'
+                                sh '${mvnCMD} -Dmaven.test.failure.ignore=true install'
                          }                 
            }  
         }
