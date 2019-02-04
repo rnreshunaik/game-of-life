@@ -11,7 +11,7 @@ pipeline{
                 }
                  stage('Maven clean package') {
                          steps{
-                                sh '${mvnCMD} install'
+                                sh '${mvnCMD} clean install'
                          }                 
            }  
         }
