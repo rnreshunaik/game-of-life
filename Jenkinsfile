@@ -1,5 +1,7 @@
 pipeline{
-        stage ('SCM Checkout') { 
+        stage ('Maven clean package') {
+               
+           sh "mvn clean package"
           
-         git url: 'https://github.com/rnreshunaik/game-of-life.git’
-}
+ }  
+
