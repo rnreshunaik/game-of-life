@@ -25,6 +25,18 @@ pipeline{
                                  //sh 'mvn package'
                                  sh 'mvn -Dmaven.test.failure.ignore=true install'
                          }                 
-           }  
+           } 
+                
+                stage('build && SonarQube analysis') {
+            steps {
+                withSonarQubeEnv('sonar') {
+                    // Optionally use a Maven environment you've configured already
+                    withMaven(maven:'maven 3.5.4') {
+                        sh 'mvn clean package sonar:sonar'
+                    }
+                }
+            }
+        }
+                
         }
 }
