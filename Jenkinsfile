@@ -13,7 +13,7 @@ pipeline{
                          steps{
                                 //sh '${mvnCMD} -Dmaven.test.failure.ignore=true install'
                                  tool name: 'maven 3.5.4', type: 'maven'
-                                 sh "mvn package"
+                                 sh 'mvn package'
                          }                 
            }  
         }
