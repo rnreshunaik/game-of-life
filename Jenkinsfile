@@ -12,7 +12,7 @@ pipeline{
                  stage('Maven clean package') {
                          steps{
                                 //sh '${mvnCMD} -Dmaven.test.failure.ignore=true install'
-                                 tool name: 'maven 3.5.4', type: 'maven'
+                                 withMaven(tool name: 'maven 3.5.4', type: 'maven')
                                  sh 'mvn package'
                          }                 
            }  
