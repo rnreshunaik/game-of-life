@@ -12,8 +12,8 @@ pipeline{
                  stage('Maven clean package') {
                          steps{
                                 //sh '${mvnCMD} -Dmaven.test.failure.ignore=true install'
-                                 def mvnHome = tool name: 'maven 3.5.4', type: 'maven'
-                                 sh "${mvnHome}/bin/mvn package"
+                                 tool name: 'maven 3.5.4', type: 'maven'
+                                 sh "mvn package"
                          }                 
            }  
         }
