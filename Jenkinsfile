@@ -27,17 +27,13 @@ pipeline{
                          }                 
            } 
                 
-                stage('build && SonarQube analysis') {
-            steps {
+                stage('SonarQube analysis') {
+    // requires SonarQube Scanner 2.8+
+                def scannerHome = tool 'sonar';
                 withSonarQubeEnv('sonar') {
-                    // Optionally use a Maven environment you've configured already
-                    withMaven(maven:'maven 3.5.4') {
-                        sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.3.0.1492:sonar'
-                        sh 'mvn clean package sonar:sonar'
-                    }
+                sh "${scannerHome}/bin/sonar-scanner"
                 }
-            }
-        }
+               }
                 
         }
 }
