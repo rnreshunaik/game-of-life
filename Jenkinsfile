@@ -56,6 +56,7 @@ pipeline{
                             '-Dsonar.sources=/var/lib/jenkins/workspace/Pipeline_project'
                     }
                 }
+        
             
         
                 
