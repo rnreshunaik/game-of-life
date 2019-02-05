@@ -44,18 +44,25 @@ pipeline{
                 //withSonarQubeEnv('sonar') {
                     // Optionally use a Maven environment you've configured already
                     //withMaven(maven:'maven 3.5.4') {
-                        sonarRunner = tool 'sonar'
+                    withSonarQubeEnv('sonar'){
 
 
-                        sh '/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar/bin/sonar-runner ' +
+                             /*sh '/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar/bin/sonar-runner ' +
                             '-Dsonar.login=39182942bb48b6cecb60d66c6a90045d8590ae46 ' +
                             '-Dsonar.host.url=http://52.66.214.154:9000 ' +
                             '-Dsonar.projectName=$JOB_NAME ' +
                             '-Dsonar.projectVersion=0 ' +
                             '-Dsonar.projectKey=$JOB_NAME ' +
-                            '-Dsonar.sources=/var/lib/jenkins/workspace/Pipeline_project'
-                    }
+                            '-Dsonar.sources=/var/lib/jenkins/workspace/Pipeline_project'*/
+                            sh 'mvn sonar:sonar'
+                            }
                 }
+                }
+                stage ('nexus upload') {
+            steps {
+                nexusPublisher nexusInstanceId: 'nexus-test', nexusRepositoryId: 'gol', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'gameoflife-web/target/gameoflife.war']], mavenCoordinate: [artifactId: 'gameoflife', groupId: 'com.wakaleo.gameoflife', packaging: 'war', version: 'Game-of-life-$BUILD_NUMBER']]]
+            }
+        }
         
             
         
