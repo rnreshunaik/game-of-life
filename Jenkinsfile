@@ -27,7 +27,7 @@ pipeline{
                          }                 
            } 
                 
-                stage('Sonarqube analysis') {
+                /*stage('Sonarqube analysis') {
                       steps {
                         script {
                                   scannerHome = tool 'sonar';
@@ -37,7 +37,18 @@ pipeline{
                                 }
 
                               }
-                                        }
+                                        }*/
+                
+                stage('build && SonarQube analysis') {
+            steps {
+                withSonarQubeEnv('sonar') {
+                    // Optionally use a Maven environment you've configured already
+                    withMaven(maven:'maven 3.5.4') {
+                        sh 'mvn clean package sonar:sonar'
+                    }
+                }
+            }
+        }
                 
         }
 }
