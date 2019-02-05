@@ -46,6 +46,7 @@ pipeline{
                     //withMaven(maven:'maven 3.5.4') {
                         sonarRunner = tool 'sonar'
 
+
                         sh '/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar/bin/sonar-runner ' +
                             '-Dsonar.login=39182942bb48b6cecb60d66c6a90045d8590ae46 ' +
                             '-Dsonar.host.url=http://52.66.214.154:9000 ' +
