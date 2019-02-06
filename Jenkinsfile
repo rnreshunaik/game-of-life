@@ -64,7 +64,15 @@ pipeline{
             }
         }
         
-            
+            stage('deploy to tomcat') {
+            steps {
+              //  withCredentials([usernameColonPassword(credentialsId: '89ec9ec6-5f5c-418c-8812-353ed6751431', variable: 'tomcat')]) {
+                sh 'docker stop tomcat'
+                sh 'docker build -t tomcat:release .'
+                sh 'docker run -itd --rm -p 8090:8080 --name tomcat tomcat:release'
+                
+            }
+        }
         
                 
         }
