@@ -47,7 +47,7 @@ pipeline{
                     withSonarQubeEnv('sonar'){
 
 
-                            sh '/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar/bin/sonar-runner ' +
+                            sh '/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar/bin/sonar-scanner ' +
                             //'-Dsonar.login=39182942bb48b6cecb60d66c6a90045d8590ae46 ' +
                             '-Dsonar.host.url=http://13.232.83.182:9000 ' +
                             '-Dsonar.projectName=$JOB_NAME ' +
