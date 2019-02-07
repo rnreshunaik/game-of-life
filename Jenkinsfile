@@ -53,8 +53,8 @@ pipeline{
                             '-Dsonar.projectName=$JOB_NAME ' +
                             '-Dsonar.projectVersion=0 ' +
                             '-Dsonar.projectKey=$JOB_NAME ' +
-                            '-Dsonar.sources=Pipeline_project' +
-                            '-Dsonar.java.binaries=Pipeline_project/gameoflife-web/target/classes/'
+                            '-Dsonar.sources=/var/lib/jenkins/workspace/Pipeline_project' +
+                            '-Dsonar.java.binaries=/var/lib/jenkins/workspace/Pipeline_project/gameoflife-web/target/classes/'
                             sh 'mvn sonar:sonar'
                             }
                 }
