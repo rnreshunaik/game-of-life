@@ -1,1 +1,24 @@
 this is test file creted on 17th sep 2019 
+
+Responsibilities:
+
+•	Supporting the code builds by integrating with continuous integration tool (Jenkins)
+•	Automated the deployments to DEV and QA Environments by picking up builds from Jenkins.
+•	Well versed with Industry best version control systems like GIT.
+•	Administered and maintained Jenkins Master serving 15's of slaves with 100+ jobs running daily involving CI jobs and operational maintenance jobs.
+•	Worked on creating the Docker containers and Docker consoles for managing the application life cycle.
+•	Configuring the Docker containers and creating docker files for different environments.
+•	Checking health of the containers using Docker swarm.
+•	Scaling the Containers up or down depending up on the load.
+•	Created Docker images using Dockerfile to support containerization of applications
+•	Deployed Docker instances to Test, Dev and Staging Servers using Jenkins.
+•	Managing Continuous Integration and Continuous Delivery (CI/CD) using Jenkins and  release management.
+•	Configuring the Day and Night Builds for the sprint teams in Jenkins.
+•	Setup and Configuration of Jenkins CI tool for automated build process.
+•	Setting up and maintaining monitoring & alert systems for servers from Nagios
+•	Automate the build Process Using Maven and Jenkins
+•	Involved in build/Release management and carried out the quality product in UAT and Production. 
+•	Trouble shooting and resolved Issues in DEV/Test Environments.
+•	Setting up the new build environment for various applications in Windows/Linux environment 
+•	Coordinate with the Development/Test Teams to receive the correct versions of re-usable and dependent components and DB Script for issuing/installing successful builds and making it ready for the Release on time.
+•	Involved in Deployment of the application using Tomcat
